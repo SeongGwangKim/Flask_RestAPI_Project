@@ -14,14 +14,14 @@
   1) download_url = "다운로드 받을 url"
   2) s3_upload_bucket_name = "s3에 업로드할 버켓 이름"
   3) trans_image_model = "변환할 모델"
-* 변환 가능한 모델 리스트
-candy.t7
-feathers.t7
-la_muse.t7
-mosaic.t7
-starry_night.t7
-the_scream.t7
-udnie.t7
+* 변환 가능한 모델 리스트 : 
+  candy.t7,
+  feathers.t7,
+  la_muse.t7,
+  mosaic.t7,
+  starry_night.t7,
+  the_scream.t7,
+  udnie.t7
 
 ## 3. 프로세스 및 예시
   1) json으로 이미지 파일의 이름을 보낸다.
