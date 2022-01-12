@@ -1,7 +1,53 @@
 # [ 이미지 변환 플라스크 Rest API ]
 
+## 0. Flask Rest API - in  SunnyWeb : 이미지 변환 웹의 Flask Rest API
 
-## 1. 구성 라이브러리
+![sunny](https://user-images.githubusercontent.com/78336335/149068626-6f9eec38-6478-4f3b-8a39-12efc77f0bb7.png)
+
+
+## 1. 구성
+![image](https://user-images.githubusercontent.com/78336335/149068958-a7bd759c-b64b-4d37-9718-d7c0eebc12cf.png)
+
+
+  1) flaskRestAPI01 : 이미지 변환 기능 중 유명 화가풍으로 변환, 안경과 동물들의 특징을 이미지에 추가하는 기능을 담당하는 flask Rest API
+    a) imgs : 안경, 돼지(코), 쥐(코, 귀) 이미지
+    b) models
+       b-1) instance_norm
+       b-2) eccv16
+    c) api_test01.py : json으로 request를 주었을 때를 테스트하는 모듈
+    d) app01.py : flask로 웹 서버를 올려 json request를 json response를 보내주는 flask Rest API
+    e) img_download.py : s3에서 이미지를 다운 받아서 임시 저장소에 이미지를 저장하는 함수를 가진 모듈
+    f) plusimage.py : 이미지와 파일 이름을 넣으면 이미지를 추가해주는 함수를 가진 모듈
+    g) total_pram : Rest API를 쉽게 사용할 수 있도록 조절할 파라미터만 모아 놓은 모듈
+    h) transiamge : 이미지와 파일 이름을 넣으면 이미지를 변환해주는 함수를 가진 모듈
+    i) upload_image : AWS S3의 버켓에 이미지를 업로드 하는 함수를 가진 모듈 
+    
+    
+  2) flaskRestAPI01 : 이미지 변환 기능 중 저화질의 이미지를 초고화질로 바꿔주는 기능을 담당하는 flask Rest API
+    a) api_test02.py : json으로 request를 주었을 때를 테스트하는 모듈
+    b) app02.py : flask로 웹 서버를 올려 json request를 json response를 보내주는 flask Rest API
+    c) img_download.py : s3에서 이미지를 다운 받아서 임시 저장소에 이미지를 저장하는 함수를 가진 모듈
+    d) total_pram : Rest API를 쉽게 사용할 수 있도록 조절할 파라미터만 모아 놓은 모듈
+    e) upload_image : AWS S3의 버켓에 이미지를 업로드 하는 함수를 가진 모듈 
+    
+    
+## 2. 핵심 기능 및 파라미터 설명
+  1) app01.py, app02.py
+   
+   ![image](https://user-images.githubusercontent.com/78336335/149072459-6b952f83-9116-486d-8a7b-30bcee3f3973.png)
+    
+    a) route /transimage : 이미지를 유명 화가풍으로 변환해주는 app
+    
+   ![image](https://user-images.githubusercontent.com/78336335/149072586-eb0c5186-2036-49b7-b2d5-a40e5193cf03.png)
+   
+    b) route /plussimage : 이미지에 쥐(코, 귀)의 이미지를 추가해주는 app
+    
+   ![image](https://user-images.githubusercontent.com/78336335/149072654-4a51557d-6dd3-4d24-bd28-6bc4d104f2c6.png)
+    
+    c) route /esrganimage : 저화질의 이미지를 초고화질의 이미지로 변환해주는 app
+
+
+## 1. 라이브러리
   1) flask
   2) boto3
   3) openCV
@@ -14,7 +60,13 @@
   1) download_url = "다운로드 받을 url"
   2) s3_upload_bucket_name = "s3에 업로드할 버켓 이름"
   3) trans_image_model = "변환할 모델"
+  
 * 변환 가능한 모델 리스트 : 
+  composition_vii.t7,
+  la_muse.t7,
+  starry_night.t7,
+  the_wave.t7,
+  
   candy.t7,
   feathers.t7,
   la_muse.t7,
@@ -44,6 +96,10 @@
 ![json2](https://user-images.githubusercontent.com/78336335/148682859-cf74e473-70f4-40b5-89e5-903cc11478cf.png)
 
 
-# 결과
+## 결과
 ![변환전후](https://user-images.githubusercontent.com/78336335/148682862-9387c06b-b856-4e17-9858-53b57312252a.png)
 
+
+
+# 참고 사이트
+1) http://amroamroamro.github.io/mexopencv/opencv/dnn_style_transfer.html
