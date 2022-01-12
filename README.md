@@ -12,18 +12,18 @@
 <img src="https://user-images.githubusercontent.com/78336335/149068958-a7bd759c-b64b-4d37-9718-d7c0eebc12cf.png"  width="30%" height="30%"/>
 
 
->   1) flaskRestAPI01 : 이미지 변환 기능 중 유명 화가풍으로 변환, 안경과 동물들의 특징을 이미지에 추가하는 기능을 담당하는 flask Rest API
-> >   a) imgs : 안경, 돼지(코), 쥐(코, 귀) 이미지<br>
-> >   b) models<br>
-> > >  b-1) instance_norm<br>
-> > >  b-2) eccv16<br>
-> > c) api_test01.py : json으로 request를 주었을 때를 테스트하는 모듈<br>
-> > d) app01.py : flask로 웹 서버를 올려 json request를 json response를 보내주는 flask Rest API<br>
-> > e) img_download.py : s3에서 이미지를 다운 받아서 임시 저장소에 이미지를 저장하는 함수를 가진 모듈<br>
-> > f) plusimage.py : 이미지와 파일 이름을 넣으면 이미지를 추가해주는 함수를 가진 모듈<br>
-> > g) total_pram : Rest API를 쉽게 사용할 수 있도록 조절할 파라미터만 모아 놓은 모듈<br>
-> > h) transiamge : 이미지와 파일 이름을 넣으면 이미지를 변환해주는 함수를 가진 모듈<br>
-> > i) upload_image : AWS S3의 버켓에 이미지를 업로드 하는 함수를 가진 모듈
+* 1) flaskRestAPI01 : 이미지 변환 기능 중 유명 화가풍으로 변환, 안경과 동물들의 특징을 이미지에 추가하는 기능을 담당하는 flask Rest API<br>
+ * a) imgs : 안경, 돼지(코), 쥐(코, 귀) 이미지<br>
+ * b) models<br>
+   * b-1) instance_norm<br>
+   * b-2) eccv16<br>
+ * c) api_test01.py : json으로 request를 주었을 때를 테스트하는 모듈<br>
+ * d) app01.py : flask로 웹 서버를 올려 json request를 json response를 보내주는 flask Rest API<br>
+ * e) img_download.py : s3에서 이미지를 다운 받아서 임시 저장소에 이미지를 저장하는 함수를 가진 모듈<br>
+ * f) plusimage.py : 이미지와 파일 이름을 넣으면 이미지를 추가해주는 함수를 가진 모듈<br>
+ * g) total_pram : Rest API를 쉽게 사용할 수 있도록 조절할 파라미터만 모아 놓은 모듈<br>
+ * h) transiamge : 이미지와 파일 이름을 넣으면 이미지를 변환해주는 함수를 가진 모듈<br>
+ * i) upload_image : AWS S3의 버켓에 이미지를 업로드 하는 함수를 가진 모듈
     
     
 >   2) flaskRestAPI01 : 이미지 변환 기능 중 저화질의 이미지를 초고화질로 바꿔주는 기능을 담당하는 flask Rest API
@@ -36,8 +36,9 @@
     
 ## 2. 핵심 기능 및 파라미터 설명
 >   1) app01.py, app02.py
-   
-   ![image](https://user-images.githubusercontent.com/78336335/149072459-6b952f83-9116-486d-8a7b-30bcee3f3973.png)
+
+   <img src="https://user-images.githubusercontent.com/78336335/149072459-6b952f83-9116-486d-8a7b-30bcee3f3973.png"  width="30%" height="30%"/>
+
     
 >     a) route /transimage : 이미지를 유명 화가풍으로 변환해주는 app
     
