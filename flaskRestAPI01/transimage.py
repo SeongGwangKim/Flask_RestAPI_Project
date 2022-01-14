@@ -1,11 +1,11 @@
 import cv2
 import numpy as np
 
-from flaskRestAPI01.total_param import trans_image_model
+from flaskRestAPI01.total_param import trans_image_model, model_catagory
 
 
 def transfer_image(image, filename):
-    net = cv2.dnn.readNetFromTorch("models/eccv16/eccv16/"+trans_image_model)
+    net = cv2.dnn.readNetFromTorch("models/"+model_catagory+"/"+trans_image_model)
 
     img = image
 
