@@ -26,7 +26,7 @@
  * i) upload_image : AWS S3의 버켓에 이미지를 업로드 하는 함수를 가진 모듈
     
 
-#### 2) flaskRestAPI01 : 이미지 변환 기능 중 저화질의 이미지를 초고화질로 바꿔주는 기능을 담당하는 flask Rest API
+#### 2) flaskRestAPI02 : 이미지 변환 기능 중 저화질의 이미지를 초고화질로 바꿔주는 기능을 담당하는 flask Rest API
  * a) api_test02.py : json으로 request를 주었을 때를 테스트하는 모듈
  * b) app02.py : flask로 웹 서버를 올려 json request를 json response를 보내주는 flask Rest API
  * c) img_download.py : s3에서 이미지를 다운 받아서 임시 저장소에 이미지를 저장하는 함수를 가진 모듈
